@@ -5,10 +5,6 @@ import java.io.IOException;
  * eines FidgetSpinnerArms.
  */
 public class FidgetSpinnerArmRunner {
-	static {
-		FidgetSpinnerArmRunner fsr = new FidgetSpinnerArmRunner();
-		fsr.run();
-	}
 	/**
 	 * Mangels einer (offiziell bekannten) Test-Funktionalitaet
 	 * koennen die Methoden nur dadurch "getestet" werden, dass
@@ -37,7 +33,8 @@ public class FidgetSpinnerArmRunner {
 	// Ausfuehren dieser Methode in Eclipse durch Rechtsklick auf
 	// den Klassennamen im Package Explorer, dann "Run As -> Java Application".
 	public static void main(String[] args) {
-		System.out.println("Main");
+		FidgetSpinnerArmRunner fsr = new FidgetSpinnerArmRunner();
+		fsr.run();
 	}
 
 }
