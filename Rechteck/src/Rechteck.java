@@ -1,4 +1,7 @@
-
+/**
+ * Klasse Rechteck.
+ * Representiert ein Rechteck das durch seine Laenge und seine Breite definiert wird.
+ */
 public class Rechteck {
 	//Länge und Breite des Rechtecks
 	private double breite, laenge;
