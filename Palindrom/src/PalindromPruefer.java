@@ -39,6 +39,7 @@ public class PalindromPruefer {
 	    // geprüeft. Dies ist egal, da das Element in der Mitte steht und deswegen die Symetrie nicht stört.
 		for (int i = 0; i < c_eingabe.length/2; i++) {
 			//Beide Zeichen werden zu einem kleinbuchstaben konvertiert und verglichen.
+			// Altenrnativ koennte die Character.toLowerCase() an der Stelle von lower() verwendet werden.
 			if(lower(c_eingabe[i]) != lower(c_eingabe[c_eingabe.length-1 - i]))
 				return false; // Gibt false zurück sobalt ein Fehler gefunden wird.
 		}
