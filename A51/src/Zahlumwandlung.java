@@ -20,8 +20,8 @@ public class Zahlumwandlung {
 	 */
 	public String wandeleZahlUm(int n) {
 		//Bereich ueberpruefen. (1 ... 3000)
-		if(0 > n || n > 3000) {
-			throw new IllegalArgumentException(String.format("Die Nummer n=%d muss im Interval [0, 3000] liegen. ", n));
+		if(n < 1 || n > 3000) {
+			throw new IllegalArgumentException(String.format("Die Nummer n=%d liegt nicht im Interval [1, 3000] liegen. ", n));
 		}
 		//System.out.println(n);
 		String nummerDec = n + "";

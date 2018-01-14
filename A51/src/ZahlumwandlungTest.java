@@ -1,6 +1,7 @@
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,9 +9,17 @@ public class ZahlumwandlungTest {
 
 	@Test
 	public void testWandeleZahlUm() {
+		
 		// Erzeuge ein Objekt der Klasse Zahlumwandlung.
 		Zahlumwandlung eineZahlumwandlung = new Zahlumwandlung();
-
+		Throwable ex = assertThrows(IllegalArgumentException.class, () -> {eineZahlumwandlung.wandeleZahlUm(0);});
+		assertThat("Zahl kleiner als 1 wurde nicht korrekt verarbeitet.",
+		        ex.getMessage(),
+		        is(equalTo(String.format("Die Nummer n=%d liegt nicht im Interval [1, 3000] liegen. ", 0))));
+		ex = assertThrows(IllegalArgumentException.class, () -> {eineZahlumwandlung.wandeleZahlUm(3001);});
+		assertThat("Zahl groeßer als 3000 wurde nicht korrekt verarbeitet.",
+		        ex.getMessage(),
+		        is(equalTo(String.format("Die Nummer n=%d liegt nicht im Interval [1, 3000] liegen. ", 3001))));
 		assertThat("Zahl 1 wurde nicht korrekt umgewandelt.",
 				eineZahlumwandlung.wandeleZahlUm(1),
 				is(equalTo("I")));

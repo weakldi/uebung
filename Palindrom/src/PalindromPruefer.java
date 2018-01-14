@@ -82,7 +82,8 @@ public class PalindromPruefer {
     	
     	// Großbuchsaben:	 10xxxxx
     	// Kleinbuchstaben:	 11xxxxx
-    	// Wandelt Zeichen mit or um.
+    	// Wandelt Zeichen mit or um. Alternativ koennte man auch
+    	// eine Subrtaktion oder Addition nutzten.
     	return (char) (c | 0b1100000);
     }
 
